@@ -9,7 +9,8 @@ def planeador(request, id):
     planeador = get_object_or_404(Planeador, pk=id)
     # Aquí capturo todas las planeaciones que tiene el id recibido en los argumentos
     planeaciones = Planeacion.objects.filter(planeador=id)
-    dicc_planeador = {'planeador': planeador, 'planeaciones': planeaciones}
+    no_planxplan = Planeacion.objects.filter(planeador=id).count()
+    dicc_planeador = {'planeador': planeador, 'planeaciones': planeaciones, 'no_planxplan': no_planxplan}
                       # 'planeador_especialidad': planeador.especialidad.nombre_especialidad}
     return render(request, 'planeadores/planeador.html', dicc_planeador)
 

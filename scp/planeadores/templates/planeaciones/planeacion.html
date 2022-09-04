@@ -24,6 +24,7 @@
             <th>OM</th>
             <th>Descripción</th>
             <th>Planeador</th>
+            <th>Especialidad</th>
             <th>Fecha creación</th>
             <th>Estado planeación</th>
         </tr>
@@ -38,8 +39,8 @@
             <td>{{planeacion.tag_equipo}}</td>
             <td>{{planeacion.om}}</td>
             <td>{{planeacion.descripcion}}</td>
-            <td>{{planeacion.planeador.nombre_planeador}} {{planeacion.planeador.apellido_planeador}}
-                {{planeacion.planeador.especialidad.nombre_especialidad}}</td>
+            <td>{{planeacion.planeador.nombre_planeador}} {{planeacion.planeador.apellido_planeador}}</td>
+            <td>{{planeacion.planeador.especialidad.nombre_especialidad}}</td>
             <td>{{planeacion.fecha}}</td>
             <td>{{planeacion.estado}}</td>
             <td><a href="editar_planeacion/{{planeacion.id}}">Editar</a></td>

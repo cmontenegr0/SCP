@@ -10,6 +10,7 @@
 <div>Nombre Planeador: {{planeador.nombre_planeador}}</div>
 <div>Apellido Planeador: {{planeador.apellido_planeador}}</div>
 <div>Especialidad Planeador: {{planeador.especialidad.nombre_especialidad}}</div>
+<div>Cantidad de planeaciones: {{no_planxplan}}</div>
 <table border="1">
         <thead>
         <tr>
@@ -19,7 +20,7 @@
             <th>Familia</th>
             <th>Tag</th>
             <th>OM</th>
-            <th>Planeador</th>
+            <th>Descripción</th>
             <th>Fecha creación</th>
             <th>Estado planeación</th>
         </tr>
@@ -34,11 +35,8 @@
             <td>{{planeacion.tag_equipo}}</td>
             <td>{{planeacion.om}}</td>
             <td>{{planeacion.descripcion}}</td>
-            <td>{{planeacion.planeador.nombre_planeador}} {{planeacion.planeador.apellido_planeador}}
-                {{planeacion.planeador.especialidad.nombre_especialidad}}</td>
             <td>{{planeacion.fecha}}</td>
             <td>{{planeacion.estado}}</td>
-            <td><a href="detalle_planeacion/{{planeacion.id}}">Ver</a></td>
             <td><a href="editar_planeacion/{{planeacion.id}}">Editar</a></td>
             <td><a href="eliminar_planeacion/{{planeacion.id}}">Eliminar</a></td>
         </tr>

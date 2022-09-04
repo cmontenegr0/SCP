@@ -31,6 +31,7 @@ class Especialidad(models.Model):
 class Planeador(models.Model):
     nombre_planeador = models.CharField(max_length=255)
     apellido_planeador = models.CharField(max_length=255)
+    registro = models.CharField(max_length=255)
     especialidad = models.ForeignKey(Especialidad, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
@@ -58,7 +59,7 @@ class PlaneacionSAP(models.Model):
     fecha = models.DateField(auto_now=True)
     estado = models.CharField(max_length=255, default='En planeación', editable=False)
     planeador = models.ForeignKey(Planeador, on_delete=models.CASCADE)
-    familia = models.CharField(max_length=255)
+    familia = models.ForeignKey(Familia, on_delete=models.SET_NULL, null=True)
     cluster = models.CharField(max_length=255)
     unidad = models.CharField(max_length=255)
 

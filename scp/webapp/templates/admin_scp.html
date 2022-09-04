@@ -1,11 +1,16 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pagina Administrador SCP</title>
+    {% block title %}
+        <title>Pagina Administrador SCP</title>
+    {% endblock %}
 </head>
+{% block content %}
 <body>
-<h1>Sistema de Control Planeadores (SCP)</h1>
+
 <div>
     Total planeadores: {{no_planeadores}}
 </div>
@@ -44,3 +49,4 @@
 </div>
 </body>
 </html>
+{% endblock %}

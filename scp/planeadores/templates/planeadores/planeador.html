@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% block title %}
     <title>Planeador</title>
+    {% endblock %}
 </head>
+{% block content %}
 <body>
 <h1> Detalle Planeador</h1>
 <div>Id Planeador: {{planeador.id}}</div>
-<div>Nombre Planeador: {{planeador.nombre_planeador}}</div>
-<div>Apellido Planeador: {{planeador.apellido_planeador}}</div>
+<div>Nombre: {{planeador.nombre_planeador}} {{planeador.apellido_planeador}}</div>
+<div>Registro: {{planeador.registro}}</div>
 <div>Especialidad Planeador: {{planeador.especialidad.nombre_especialidad}}</div>
 <div>Cantidad de planeaciones: {{no_planxplan}}</div>
 <table border="1">
@@ -47,3 +51,4 @@
 <a href="{% url 'index' %}">Regresar a pagina principal</a>
 </body>
 </html>
+{% endblock %}

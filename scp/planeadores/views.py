@@ -11,7 +11,7 @@ def planeador(request, id):
     planeaciones = Planeacion.objects.filter(planeador=id)
     no_planxplan = Planeacion.objects.filter(planeador=id).count()
     dicc_planeador = {'planeador': planeador, 'planeaciones': planeaciones, 'no_planxplan': no_planxplan}
-                      # 'planeador_especialidad': planeador.especialidad.nombre_especialidad}
+
     return render(request, 'planeadores/planeador.html', dicc_planeador)
 
 def agregarPlaneador(request):

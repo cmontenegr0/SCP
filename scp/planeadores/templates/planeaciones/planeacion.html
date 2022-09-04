@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planeación</title>
+</head>
+<body>
+<h1>Planeaciones</h1>
+<div>
+    Total Planeaciones: {{no_planeaciones}}
+</div>
+<div>
+    <a href="nueva_planeacion">Agregar Planeacion</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cluster</th>
+            <th>Unidad</th>
+            <th>Familia</th>
+            <th>Tag</th>
+            <th>OM</th>
+            <th>Descripción</th>
+            <th>Planeador</th>
+            <th>Fecha creación</th>
+            <th>Estado planeación</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for planeacion in planeaciones %}
+        <tr>
+            <td>{{planeacion.id}}</td>
+            <td>{{planeacion.cluster.sigla_cluster}}</td>
+            <td>{{planeacion.unidad.numero_unidad}}</td>
+            <td>{{planeacion.familia.nombre_familia}}</td>
+            <td>{{planeacion.tag_equipo}}</td>
+            <td>{{planeacion.om}}</td>
+            <td>{{planeacion.descripcion}}</td>
+            <td>{{planeacion.planeador.nombre_planeador}} {{planeacion.planeador.apellido_planeador}}
+                {{planeacion.planeador.especialidad.nombre_especialidad}}</td>
+            <td>{{planeacion.fecha}}</td>
+            <td>{{planeacion.estado}}</td>
+            <td><a href="editar_planeacion/{{planeacion.id}}">Editar</a></td>
+            <td><a href="eliminar_planeacion/{{planeacion.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'index' %}">Regresar a pagina principal planeadores</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Especialidad</title>
+</head>
+<body>
+<h1>Agregar Especialidad</h1>
+<form method="POST">
+    <table>{{forma_especialidad}}</table>
+    <button type="submit">Guardar</button>
+    {% csrf_token %}
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad</title>
+</head>
+<body>
+<h1>Unidades</h1>
+<div>
+    Total Unidades: {{no_unidades}}
+</div>
+<div>
+    <a href="nueva_unidad">Agregar Unidad</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Unidad</th>
+            <th>Nombre Unidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for unidad in unidades %}
+        <tr>
+            <td>{{unidad.id}}</td>
+            <td>{{unidad.numero_unidad}}</td>
+            <td>{{unidad.nombre_unidad}}</td>
+            <td><a href="detalle_unidad/{{unidad.id}}">Ver</a></td>
+            <td><a href="editar_unidad/{{unidad.id}}">Editar</a></td>
+            <td><a href="eliminar_unidad/{{unidad.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'index' %}">Regresar a pagina principal planeadores</a>
+    </div>
+</div>
+</body>
+</html>

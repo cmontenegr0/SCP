@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Familia</title>
+</head>
+<body>
+<h1>FAMILIAS</h1>
+<div>
+    Total familias: {{no_familias}}
+</div>
+<div>
+    <a href="nueva_familia">Agregar Familia</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Familia</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for familia in familias %}
+        <tr>
+            <td>{{familia.id}}</td>
+            <td>{{familia.nombre_familia}}</td>
+            <td><a href="detalle_familia/{{familia.id}}">Ver</a></td>
+            <td><a href="editar_familia/{{familia.id}}">Editar</a></td>
+            <td><a href="eliminar_familia/{{familia.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'index' %}">Regresar a pagina principal planeadores</a>
+    </div>
+</div>
+</body>
+</html>

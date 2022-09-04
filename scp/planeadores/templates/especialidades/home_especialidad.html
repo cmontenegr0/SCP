@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Especialidad</title>
+</head>
+<body>
+<h1>Especialidades</h1>
+<div>
+    Total especialidades: {{no_especialidades}}
+</div>
+<div>
+    <a href="nueva_especialidad">Agregar Especialidad</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Especialidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for especialidad in especialidades %}
+        <tr>
+            <td>{{especialidad.id}}</td>
+            <td>{{especialidad.nombre_especialidad}}</td>
+            <td><a href="detalle_especialidad/{{especialidad.id}}">Ver</a></td>
+            <td><a href="editar_especialidad/{{especialidad.id}}">Editar</a></td>
+            <td><a href="eliminar_especialidad/{{especialidad.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'index' %}">Regresar a pagina principal planeadores</a>
+    </div>
+</div>
+</body>
+</html>

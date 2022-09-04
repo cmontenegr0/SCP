@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Administrador SCP</title>
+</head>
+<body>
+<h1>Sistema de Control Planeadores (SCP)</h1>
+<div>
+    Total planeadores: {{no_planeadores}}
+</div>
+<div>
+    <a href="nuevo_planeador">Agregar Planeador</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Planeador</th>
+            <th>Especialidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for planeador in planeadores %}
+        <tr>
+            <td>{{planeador.id}}</td>
+            <td>{{planeador.nombre_planeador}} {{planeador.apellido_planeador}}</td>
+            <td>{{planeador.especialidad.nombre_especialidad}}</td>
+            <td><a href="planeador/{{planeador.id}}">Ver</a></td>
+            <td><a href="editar_planeador/{{planeador.id}}">Editar</a></td>
+            <td><a href="eliminar_planeador/{{planeador.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="planeacion">Ir a Planeaciones</a>
+        <a href="home_especialidad">Ir a Especialidades</a>
+        <a href="cluster">Ir a Clusters</a>
+        <a href="unidad">Ir a Unidades</a>
+        <a href="home_familia">Ir a Familias</a>
+    </div>
+</div>
+</body>
+</html>

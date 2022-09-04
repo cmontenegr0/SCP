@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cluster</title>
+</head>
+<body>
+<h1>Clusters</h1>
+<div>
+    Total Clusters: {{no_clusters}}
+</div>
+<div>
+    <a href="nuevo_cluster">Agregar Cluster</a>
+</div>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cluster</th>
+            <th>Nombre Cluster</th>
+            <th>Unidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cluster in clusters %}
+        <tr>
+            <td>{{cluster.id}}</td>
+            <td>{{cluster.sigla_cluster}}</td>
+            <td>{{cluster.nombre_cluster}}</td>
+            <td>{{cluster.unidad.numero_unidad}}</td>
+            <td><a href="detalle_cluster/{{cluster.id}}">Ver</a></td>
+            <td><a href="editar_cluster/{{cluster.id}}">Editar</a></td>
+            <td><a href="eliminar_cluster/{{cluster.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'index' %}">Regresar a pagina principal planeadores</a>
+    </div>
+</div>
+</body>
+</html>

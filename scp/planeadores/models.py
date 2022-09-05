@@ -32,6 +32,7 @@ class Planeador(models.Model):
     nombre_planeador = models.CharField(max_length=255)
     apellido_planeador = models.CharField(max_length=255)
     registro = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
     especialidad = models.ForeignKey(Especialidad, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):

@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from planeadores.views import agregarPlaneador, agregarEspecialidad, agregarFamilia, \
     home_especialidad, home_familia, cluster, unidad, agregarCluster, agregarUnidad, planeacion, agregarPlaneacion, \
@@ -23,6 +23,7 @@ from webapp.views import adminSCP
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include("django.contrib.auth.urls")),
     path('', adminSCP, name='index'),
     path('planeador/<int:id>', planeador, name='pl'),
     path('home_especialidad', home_especialidad, name='esp'),
